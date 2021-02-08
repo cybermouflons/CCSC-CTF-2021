@@ -1,0 +1,11 @@
+## Pip-dependencies for developing the project.
+#
+# Install it with:
+#   pip install -r requirements/dev.pip
+
+-r exe.pip
+-r test.pip
+
+black
+docopt  # For `/bin/bumpver.py`.
+mypy; implementation_name == 'cpython'

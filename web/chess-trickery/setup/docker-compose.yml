@@ -1,0 +1,26 @@
+version: '3'
+services:
+  webserver:
+    build: webserver
+    networks:
+      default:
+        ipv4_address: 172.16.3.10
+    restart: always
+  proxy:
+    build: proxy
+    ports:
+      - "80:80"
+    networks:
+      default:
+        ipv4_address: 172.16.3.11
+    restart: always
+  bot:
+    build: bot
+    networks:
+      default:
+        ipv4_address: 172.16.3.12
+    restart: always
+networks:
+  default:
+    external:
+      name: wcd

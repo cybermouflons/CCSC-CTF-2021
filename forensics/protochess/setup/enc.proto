@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+enum EncType {
+    AES_ECB = 0;
+    AES_CBC = 1;
+    AES_CTR = 2;
+}
+
+message EncryptRequest {
+    bytes key = 1;
+    EncType mode = 2;
+}
+
+message FlagResponse {
+    bytes iv = 1;
+    bytes flag = 2;
+}
+
+service Encrypt {
+  rpc encrypt(EncryptRequest) returns (FlagResponse);
+}

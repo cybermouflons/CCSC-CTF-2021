@@ -1,0 +1,18 @@
+
+# Curve Definition
+# y**2 = x**3 + 117784136680056914958014732219575150968x + 115857097425776487375223208492285700589 mod 218925954923455975113808255640357734801
+#
+# G = (1, 12925268147578859956582415706419653103)
+# P = d1*G = (83120571548610219336387422119327889747, 142472226619953807903704206304442544019)
+# Q = d2*G = (132577002137522699788630037342938299835, 42276980267889888363445760641870330604)
+# K = d1*d2*G = d2*P = d1*Q
+
+from Crypto.Cipher import AES
+from hashlib import sha256
+
+aes = AES.new(sha256(K[0].to_bytes(16, 'big')).digest(), AES.MODE_ECB)
+flag = open('flag.txt').read().strip()
+cipher = aes.encrypt(flag.ljust((len(flag) + 15) // 16 * 16 ).encode())
+
+with open("flag.enc","w") as f:
+    f.write(cipher.hex())

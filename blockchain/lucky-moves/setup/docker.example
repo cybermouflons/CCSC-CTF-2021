@@ -1,0 +1,6 @@
+# This example shows how to build only this service without redeploying the smart contract.
+
+IMAGE_NAME=cybermouflons/ccsc2021-lucky-moves-getflag
+
+docker build  -t ${IMAGE_NAME} -f ./setup/getflag.Dockerfile ./setup
+docker run --restart always --env INFURA_PROJECT_ID=${INFURA_PROJECT_ID} --env LUCKYMOVES_ADDR=${LUCKYMOVES_ADDR} -p 8085:8085 -d -it ${IMAGE_NAME}

@@ -1,0 +1,26 @@
+version: '3'
+services:
+  webserver:
+    build: webserver
+    networks:
+      default:
+        ipv4_address: 172.16.4.19
+    restart: always
+  proxy:
+    build: proxy
+    ports:
+      - "7000:80"
+    networks:
+      default:
+        ipv4_address: 172.16.4.20
+    restart: always
+  bot:
+    build: bot
+    networks:
+      default:
+        ipv4_address: 172.16.4.21
+    restart: always
+networks:
+  default:
+    external:
+      name: synchronous

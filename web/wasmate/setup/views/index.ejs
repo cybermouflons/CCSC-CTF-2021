@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>Worry about Scholars Mate</title>
+
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|Inconsolata:400,700|Old+Standard+TT:400,400i,700|Roboto+Mono:300,300i,400,400i,500,500i,700,700i|Roboto:400,400i,500,500i,700,700i,900,900i">
+</head>
+
+<body>
+    <div class="post-3">
+        <div id="app">
+
+            <section id="tabs">
+                <input type="radio" id="tab1" name="tab" <% if(tab==1){ %> checked <% } %>>
+                    <label for="tab1" id="tab1" title="cover image"><i class="far fa-home fw"></i></label>
+
+                    <input type="radio" id="tab2" name="tab" <% if(tab==2){ %> checked <% } %>>
+                        <label for="tab2" id="tab2" title="cover image"><i class="far fa-search fw"></i></label>
+
+                            <hr style="top: 15px;">
+                            <div class="wrap">
+
+                                <div class="app overview">
+                                    <div class="inside">
+                                        <h1>WASMATE</h1>
+                                        The Schollers Mate.
+                                        White kings pawne one houſe.
+                                        Black kings pawne the ſame.
+                                        White Queen to the contrary kings Rookes fourth houſe
+                                        Black Queens knight to her Biſhops third houſe
+                                        White kings Biſhop to the queens Biſhops fourth houſe
+                                        Black kings knight to the kings Biſhops third houſe
+                                        White queen takes the contrary kings Biſhops pawne gives mate.
+                                        <hr>
+                                        <i>— Beale, The Royall Game of Chesse-Play</i>
+                                    </div>
+                                </div>
+
+                                <div class="app history">
+                                    <div class="inside">
+                                        <h1>CHECKMATE ALERT</h1>
+                                        <form class="search-container" method="POST" action="/">
+                                            <input type="text" name="fen" class="fen-search"
+                                                placeholder="Enter board in FEN notation...">
+                                            <button type="submit" class="searchButton">
+                                                <span>FIND</span>
+                                            </button>
+                                        </form>
+                                        <% if(locals.fen){ %>
+                                            <h2>Result for: <%= fen %></h2>
+                                            <% if(locals.checkmate_side==0){ %><h3>No checkmate....</h3><% } %>
+                                            <% if(locals.checkmate_side==8){ %><h3 class="alert">ALERT: White can checkmate in single move!</h3><% } %>
+                                            <% if(locals.checkmate_side==16){ %><h3 class="alert">ALERT: Black can checkmate in single move!</h3><% } %>
+                                            <% if(locals.checkmate_side==1){ %><h3>What happened here...?</h3><% } %>
+                                        <% } %>
+                                    </div>
+                                </div>
+
+                                <hr style="top: 353px;">
+            </section>
+            <section id="appside">
+                <div class="immigrant">
+                    <img src="static/images/mouflon_piece.png">
+                </div>
+                <div class="appfooter">
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://files.jcink.net/uploads/gestaltrp/js/fontawesome_all.js"></script>
+    <script src="static/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+*
+!pypiserver
+!requirements
+!docker/docker-requirements.txt
+!docker/gunicorn.conf.py
+!docker/entrypoint.sh
+!README.rst
+!setup.cfg
+!setup.py

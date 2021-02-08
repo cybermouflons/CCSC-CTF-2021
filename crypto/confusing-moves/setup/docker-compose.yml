@@ -1,0 +1,36 @@
+version: "3.5"
+
+services:
+
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    environment:
+      - APP_NAME=confusing_moves
+      - FLASK_ENV=production
+      - FLASK_DEBUG=0
+      - PYTHONUNBUFFERED=0
+      - INTERNAL_PYPI_URL=http://internalpypi:8080
+      - PUBLIC_PYPI_URL=http://publicpypi:8080
+      - SECRET_KEY=4n0th3r_n0t_so_rand0m_s3cr3t_key_but_wh0_c4res
+
+  internalpypi: 
+    build:
+      context: ./pypiserver
+      dockerfile: Dockerfile
+    volumes:
+      - "./private_packages:/data/packages"
+    
+  publicpypi: 
+    image: pypiserver/pypiserver
+    volumes:
+      - "./public_packages:/data/packages"
+      - type: bind
+        source: ./pypiserver/auth
+        target: /data/auth
+    command: -P /data/auth/.htpasswd
+    ports:
+      - 8081:8080

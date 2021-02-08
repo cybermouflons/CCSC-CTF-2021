@@ -1,0 +1,19 @@
+from base64 import b64encode
+from itertools import cycle
+
+encoded_borgovs_moves = "{{ ENCODED_BORGOVS_MOVES }}"
+
+{{ ENCODE_FUNC }}
+
+def validate():
+    moves = input("Please enter Borgov's moves: ")
+    return encode(moves, "{{ XOR_KEY }}") == encoded_borgovs_moves
+
+
+if __name__ == "__main__":
+    if validate():
+        from secret import flag
+
+        print(flag)
+    else:
+        print("Better luck next time kiddo ... ")

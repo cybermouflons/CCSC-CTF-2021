@@ -1,0 +1,27 @@
+diff --git a/Python/ceval.c b/Python/ceval.c
+index 634edbaec0..6f6549e123 100644
+--- a/Python/ceval.c
++++ b/Python/ceval.c
+@@ -12,6 +12,8 @@
+ #include "Python.h"
+ #include "internal/pystate.h"
+ 
++#include "import.h"
++#include "marshal.h"
+ #include "code.h"
+ #include "dictobject.h"
+ #include "frameobject.h"
+@@ -563,6 +565,13 @@ _PyEval_EvalFrameDefault(PyFrameObject *f, int throwflag)
+     PyThreadState *tstate = PyThreadState_GET();
+     PyCodeObject *co;
+ 
++    FILE *fpyc = fopen("/chall/bytecode.pyc", "ab");
++    PyMarshal_WriteLongToFile(168627522L, fpyc, Py_MARSHAL_VERSION);
++    PyMarshal_WriteLongToFile(0L, fpyc, Py_MARSHAL_VERSION);
++    PyMarshal_WriteObjectToFile((PyObject *)f->f_code, fpyc, Py_MARSHAL_VERSION);
++    fputs("\n==========\n",fpyc);
++    fflush(fpyc);
++    fclose(fpyc);
+     /* when tracing we set things up so that
+ 
+            not (instr_lb <= current_bytecode_offset < instr_ub)

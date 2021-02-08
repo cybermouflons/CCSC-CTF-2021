@@ -1,0 +1,5 @@
+Episode1 (normal deletion => Flag file Alma.bmp)
+Hint 1: FTK Imager
+Hint 2: Look in the bin man
+Flag: What You Know Isn't Always What's Important.
+Solution: Open image in FTK Imager lite and look in the Recycle Bin.

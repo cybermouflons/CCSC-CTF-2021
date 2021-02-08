@@ -1,0 +1,26 @@
+File: Walkthtough.txt
+Challenge: The New Zealand Chess Chronicle
+Author: @superhedgy
+
+The PDF contains the following easter eggs, hidden and encoded strings which are not part of the solution:
+
+Binary String:  
+1001100 01100101 01110100 00100111 01110011 00100000 01010000 01101100 01100001 01111001 00101110 
+
+Decoded String:
+Let’s Play
+
+1. Download the original document and compare the two documents using DiffPDF or any other software. The original document can be found here, https://books.google.com.cy/books?id=LxUwAAAAYAAJ.
+
+2. Find the QR Code. 
+ Notice how two empty pages were added between page 12 and 15. The hidden QR code is masked under a white rectangle. There are multipel tools to extract the images from the pdf. The straw man approach would be to simply copy/paste the contents of the PDF into word.
+
+3. Scan the static the QR Code. The QR code will redirect the user to "https://qrgo.page.link/xgrTM" which is a shorten url for a chess game, 'https://lichess.org/ruLyFRg3'
+
+4. The player will then have to export the chess moves in PGN format. Then decode the PGN format into a message and retrieve the flag using this https://incoherency.co.uk/chess-steg/
+
+5. Alternative the player can use the chess-steg-cli tool and use the link to decode the message. 
+
+1. h4 c6 2. f4 Qc7 3. e3 Qa5 4. a3 Nh6 5. b4 Qf5 6. d3 Qg4 7. Kd2 a6 8. Bb2 b5 9. Qe2 Qg3 10. h5 d6 11. Qf3 Nf5 12. e4 Bd7 13. c3 h6 14. Be2 e5 15. exf5 exf4 16. Bc1 Qg5 17. c4 Rh7 18. Qe4+ Kd8 19. Nh3 Qf6 20. Nc3 g5 21. g4 Bc8 22. d4 Ra7 23. Bf1 Re7 24. Qd3 Rc7 25. Rh2 a5 26. Ne2 Na6 27. Bg2 Bg7 28. Qc3 f3 29. Bxf3 Nb8 30. Neg1 Bh8 31. Be2 Nd7 32. Qd3 Bg7 33. Rh1 Ba6 34. Qc3 Bb7 35. a4 Ke8 36. Qe3+ Qe7 37. Kc2 Bc8 38. Ra2 c5 39. Ra3 Kf8 40. Bf1 cxb4 41. Qd2 Qe4+ 42. Rd3 b3+ 43. Kxb3 bxc4+ 44. Ka2 cxd3 45. Nf2 { Black resigns. } 1-0
+
+Flag:  CCSC{Anger_is_a_potent_spice!}

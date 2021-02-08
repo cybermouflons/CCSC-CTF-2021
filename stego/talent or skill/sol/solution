@@ -1,0 +1,20 @@
+SOLUTION
+=================================================================
+
+There are multiple tools online or offline to do this and can be also done manually by writing a custom script.
+
+Easy/Fast way
+--------------------------
+pip install dna
+
+Encode file to DNA:
+	dne -e queens_gambit_secret.pdf
+
+Decode file from DNA:
+	dna -d Beth_Harmon.dna
+
+1. Identify that the file is PDF
+2. mv Beth_Harmon.dna.decoded queensgambit.pdf
+3. string with the flag somewhere in the pdf file (Page 11)
+
+Flag:  CCSC{qu33n5-64mb17_1f-u_w4n7_2-f16h7-4-4n_4dv4n7463}

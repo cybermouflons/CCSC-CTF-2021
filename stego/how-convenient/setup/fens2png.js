@@ -1,0 +1,25 @@
+import ChessImageGenerator from 'chess-image-generator';
+
+const imageGenerator = new ChessImageGenerator({
+  size: 256,
+  light: 'rgb(240, 217, 181)',
+  dark: 'rgb(181, 136, 99)',
+});
+
+const fens = [
+  '1P4PP/1P4PP/1P1P2PP/1P4PP/1PPPP1PP/2PPP3/1PPPP3/2PPP3',
+  '2PPPPPP/1P1PPPPP/1PPP1P2/1PP1P3/1PP4P/1PPP1P2/1PPP2PP/1P1PPPPP',
+  '1P1P2PP/1PPP1P1P/1PPP4/2PP2PP/1PPP2P1/1P1PPPPP/1PP3PP/2PP4',
+  '1PP1PPP1/1PPP1PP1/1PP2P1P/1PP1PPP1/2PP3P/1PP2P1P/1PP1PPP1/1PPP1P2',
+  '1P1PPPPP/1PP2P2/1PP1PPPP/1PP1PPP1/1PPP1P2/1P1PPPPP/1PPPP2P/2PP4',
+  '1PPP1P1P/1P1PPPPP/1PP4P/1PP2PPP/1PPP2P1/2PP2PP/2PP2PP/2PPPPPP',
+  '1PP1P2P/1P1PPPPP/1PPP1P2/1PP1P3/1PP1P2P/1PP1PPP1/1PP1P1PP/1P1PPPPP',
+  '1PP1P2P/1PPP1P2/1P1PPPPP/1PP1P2P/1PPP2PP/1P1PPPPP/1P1PPPPP/1PPPPP1P',
+];
+
+for (let i = 0; i < fens.length; i++) {
+  const fen = fens[i] + ' w KQkq - 0 1';
+  await imageGenerator
+    .loadFEN(fen)
+    .then(() => imageGenerator.generatePNG(`./${i + 1}.png`));
+}

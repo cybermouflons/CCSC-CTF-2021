@@ -1,0 +1,157 @@
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+html,body{
+	width: auto;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	background-position: center;
+	background-size:cover;
+	background-repeat:no-repeat;
+	box-sizing:border-box;
+	background-color: black;
+	background-image: url('/static/chess-board-1.jpg');
+
+	/* overflow-y: auto; */
+}
+
+.nav{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	top: 0;
+	left: 0;
+	padding: 0;
+	background-color: snow;
+	opacity: 0.6;
+	border-bottom-left-radius: 50%;
+	border-bottom-right-radius: 50%;
+}
+
+.nav ul {
+	box-sizing:border-box;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	margin: 0;
+	padding: 5px;
+	right: 0;
+	overflow: auto;
+}
+
+.nav li, .nav li a {
+	list-style-type: none;
+	text-decoration: none;
+	font-weight:bold;
+	color: black;
+	font-family: 'Lobster', cursive;
+	font-size: 20px;
+	margin: 5px;
+	display: inline-block;
+}
+
+.nav li a:hover{
+	color: orange;
+}
+
+.bannerleft, .bannerleftContact {
+    opacity: 0.7;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    width: auto !important;
+    padding: 0;
+    text-align: center;
+    top: 40% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bannerleftAccount, .bannerleftAbout {
+    opacity: 0.7;
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    width: auto !important;
+    padding: 0;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bannerleft p {
+    text-align: center;
+    color: darkgray;
+}
+
+#text {
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.content {
+    width: 100%;
+    padding: 2%;
+    position: relative;
+    box-sizing:border-box;
+    bottom: 0;
+    color: white;
+    height: 100vh;
+}
+
+.contentafter{
+    width: 100%;
+    padding: 2%;
+    margin: 0;
+    position: relative;
+    box-sizing:border-box;
+    bottom: 0;
+    color: white;
+    height: 100vh;
+    
+
+}
+
+.appearanimation{
+	animation-name: appear;
+	animation-duration: 2s;
+}
+
+#contentafter1{
+    /* background-color: #333333; */
+    background-image: url('/static/chess-board-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: black; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

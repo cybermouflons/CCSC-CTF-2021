@@ -1,0 +1,10 @@
+Twitter profile: https://twitter.com/BethHar68868979
+
+Download image from post: https://twitter.com/BethHar68868979/status/1375240313783078913/photo/1
+
+convert image to mp3 and listen for the flag.
+
+Flag: CCSC{6r347_5p07_70_h1d3_ur_p01y6107_53cr375!}
+
+
+NOTE: https://github.com/DavidBuchanan314/tweetable-polyglot-png

@@ -1,0 +1,36 @@
+/* custom css */
+
+.site-content {
+  padding-top: 6rem;
+}
+
+.intro img {
+  width: 250px;
+}
+
+
+.filter {
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px
+}
+
+.profiles img {
+  margin-right: -6px
+}
+
+.col-md-4 {
+  margin-top: 26px
+}
+
+.form-group textarea{
+  min-height:250px;
+}
+
+.credits {
+  align-items: baseline;
+}
+
+.inline {
+  display: inline !important;
+}

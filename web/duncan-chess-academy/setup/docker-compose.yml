@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+    ports:
+      - 5002:5000
+    environment:
+      - APP_NAME=duncan_chess_academy
+      - FLASK_DEBUG=0
+      - PYTHONUNBUFFERED=0
+      - APP_SETTINGS=webapp.server.config.ProductionConfig
+      # - DATABASE_URL=postgres://postgres:postgres@web-db:5432/users_dev
+      # - DATABASE_TEST_URL=postgres://postgres:postgres@web-db:5432/users_test
+      - SECRET_KEY=4_n0t_so_rand0m_s3cr3t_key_but_wh0_c4res
+  #   depends_on:
+  #     - web-db
+
+  # web-db:
+  #   container_name: web-db
+  #   image: postgres:10.4-alpine
+  #   environment:
+  #     - POSTGRES_USER=postgres
+  #     - POSTGRES_PASSWORD=postgres

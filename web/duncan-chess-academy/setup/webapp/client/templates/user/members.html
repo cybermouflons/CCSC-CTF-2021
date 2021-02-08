@@ -1,0 +1,67 @@
+{% extends "_base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+<div>
+  <h1>Welcome to Duncan Chess Academy!</h1>
+  <hr><br>
+  <p>Use the filters below to search for historical chess games and study them</p>
+  <hr><br>
+  <form class="form" role="form" method="post" action="">
+    {{ form.csrf_token }}
+    {{ wtf.form_errors(form, hiddens="only") }}
+
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        {{ wtf.form_field(form.opening_name) }}
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        {{ wtf.form_field(form.victory_status) }}
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        {{ wtf.form_field(form.winner) }}
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        {{ wtf.form_field(form.rated) }}
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-6">
+        {{ wtf.form_field(form.turns) }}
+      </div>
+    </div>
+
+    <div class="col-lg-2 col-md-4 col-sm-4">
+      <button class="btn btn-success" type="submit">Search</button>
+    </div>
+  </form>
+
+  <br />
+  <table id="games-table" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Rated</th>
+        <th>Turns</th>
+        <th>Vistory Status</th>
+        <th>Winner</th>
+        <th>Opening Name</th>
+        <th>Moves</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for game in games %}
+      <tr >
+        <th>{{ game['id'] }}</th>
+        <th>{{ game['rated'] }}</th>
+        <th>{{ game['turns'] }}</th>
+        <th>{{ game['victory_status'] }}</th>
+        <th>{{ game['winner'] }}</th>
+        <th>{{ game['opening_name'] }}</th>
+        <th>{{ game['moves'] }}</th>
+      </tr> 
+      {% endfor %}
+      
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

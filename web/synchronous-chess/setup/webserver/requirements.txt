@@ -1,0 +1,6 @@
+flask
+flask-talisman
+setuptools
+gevent
+gunicorn==19.10.0
+gunicorn[gevent]==19.10.0

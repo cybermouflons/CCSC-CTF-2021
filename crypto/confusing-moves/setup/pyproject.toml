@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "confusing-moves"
+version = "0.1.0"
+description = ""
+authors = ["rok0s <info@cybermouflons.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Flask = "^1.1.2"
+Flask-Assets = "^2.0"
+Flask-Bootstrap = "^3.3.7"
+Flask-Login = "^0.5.0"
+Flask-SQLAlchemy = "^2.4.4"
+Flask-WTF = "^0.14.3"
+Flask-Bcrypt = "^0.7.1"
+Flask-Migrate = "^2.7.0"
+email-validator = "^1.1.2"
+pycryptodomex = "^3.10.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
