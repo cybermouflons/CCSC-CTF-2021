@@ -37,6 +37,7 @@ Port 8000 will be used for serving static artifacts
 | [Forced Draw](crypto/forced-draw)                   | koks               | -        |
 | [Confusing Moves](crypto/confusing-moves)           | \_Roko'sBasilisk\_ |5000, 8081|
 | [Rookie's Base](crypto/rookie's-base/README.md)     | s1kk1s             | -   |
+| [PokePawn II](web/pokepawn)                         | \_Roko'sBasilisk\_ | -     |
 
 ### Forensics
 
@@ -96,3 +97,4 @@ Port 8000 will be used for serving static artifacts
 | [Wasmate](web/wasmate)                           | \_Roko'sBasilisk\_ | 3000  |
 | [Synchronous Chess](web/synchronous-chess)       | styx00             | 7000  |
 | [Cate Bianca](web/cate-bianca)                   | styx00             | 7500  |
+| [PokePawn I](web/pokepawn)                       | \_Roko'sBasilisk\_ | -     |
