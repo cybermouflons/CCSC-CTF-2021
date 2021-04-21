@@ -61,8 +61,7 @@ Limitations of Discord nicknames:
 Sample nickname payloads:
 
 - \<img srx=x onerror=resign()/>
-- \<body onload="resign()">\</body>
-- \<script defer>resign()\</script>
+- \<body onload="resign()">
 
 Or if you control a very short domain, you can include arbitrary Javascript and execute whatever you want:
 
