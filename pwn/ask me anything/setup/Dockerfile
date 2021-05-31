@@ -7,6 +7,7 @@ RUN apt-get install -y socat gcc-multilib
 WORKDIR /root
 COPY pwn ./pwn
 COPY flag.txt ./flag.txt
+RUN chmod +x ./pwn
 
-EXPOSE 4337
+EXPOSE 51337
 CMD ["socat", "-T60", "TCP-LISTEN:51337,reuseaddr,fork,su=root", "EXEC:/root/pwn"]
