@@ -10,6 +10,10 @@ Although some of the challenges may run as is, it is recommended that you have *
 
 For a more detailed description of the folder structure for challenges, please see the [Jeopardy Creation Guide](https://www.notion.so/Jeopardy-CTF-Challenge-Creation-770b62e8556442a3826cb6593d6affa4) on the Cybermouflons wiki.
 
+## Scoreboard
+
+You can find a visualisation of the final scoreboard here: https://jovial-pasteur-2355a9.netlify.app/scoreboard
+
 ## Reserved Ports
 Port 8000 will be used for serving static artifacts
 
